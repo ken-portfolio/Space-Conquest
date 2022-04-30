@@ -14,6 +14,14 @@ void drawWindow() {
 	window.clear();
 	window.draw(imgGalaxyBackground);
 
+
+
+
+
+	//Draw shapes (TESTING ****************)
+	window.draw(imgSolarSystemGraphic);
+	//*************************************
+
 	//Updates mouse
 	imgMouseCursor.setPosition(sf::Mouse::getPosition(window));
 	window.draw(imgMouseCursor);

@@ -21,39 +21,8 @@ Graphic2D imgGalaxyBackground("images/galaxy.jpg");
 
 
 //Graphics constructed at launch (CustomGraphics.h)
-Graphic2D imgSolarSystemGraphic(320, 32);
+Graphic2D imgSolarSystemGraphic(240, 24);
 
 
 
 #endif 
-
-
-/*
-#pragma once
-#ifndef ASSEMBLEDART_HEADER
-#define ASSEMBLEDART_HEADER
-
-#include "Graphic2D.h"
-
-class SolarSystemIcon : public Graphic2D {
-public:
-	SolarSystemIcon(sf::Color);
-private:
-};
-SolarSystemIcon::SolarSystemIcon(sf::Color clr) : Graphic2D(16, 16) {
-	sf::CircleShape c;
-	c.setFillColor(clr);
-	c.setPosition(4.f, 4.f);
-	c.setRadius(4);
-	draw(c);
-	c.setFillColor(sf::Color::Transparent);
-	c.setOutlineColor(clr);
-	c.setOutlineThickness(-1.f);
-	c.setPosition(1.f, 1.f);
-	c.setRadius(7);
-	draw(c);
-}
-
-
-#endif
-*/
