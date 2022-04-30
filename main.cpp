@@ -4,64 +4,43 @@
 // Programmer: Ken Scattergood
 //************************************
 
+
+//Generic headers
 #include <SFML/Graphics.hpp>
 #include "Primitives.h"
 #include "Graphic2D.h"
 
+//Specific 'Space Conquest' headers
 #include "Globals.h"
+#include "CustomGraphics.h"
+#include "Initialize.h"
+#include "UserEvents.h"
+#include "AIEvents.h"
+#include "ProcessingEvents.h"
+#include "WindowDrawing.h"
 
-void initialize();
-void reset();
-void doUserEvents(sf::Event&);
-void updateMousePosition();
-void doLogicLoop();
-void doDrawLoop();
+
 
 int main() {
-	initialize();
-	reset();
+
+	initialize(); //one time execution at program launch
+	initializeReset(); //executes each time a new game is created/loaded
+
 	while (window.isOpen() && GAME_IS_RUNNING) {
+
+		//Process User Events (mouse & keyboard)
 		sf::Event event;
 		while (window.pollEvent(event)) {
-			doUserEvents(event);
+			processUserEvents(event);
 		}
-		doLogicLoop();
-		updateMousePosition();
-		doDrawLoop();
+		
+		//Basic game processes handled at timer tick (resource income+, ship movement, etc.)
+		processGameEvents();
+
+		drawWindow();
 	}
+
 	window.close();
 	return 0;
-}
-
-//Builds initial graphics and game state; only needs to be called when game loads
-void initialize() {
-	window.setMouseCursorVisible(false);
-}
-
-//Resets variables for a new game; called everytime a new game is created or loaded
-void reset() {
-
-}
-
-//Handles user input
-void doUserEvents(sf::Event& e) {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) GAME_IS_RUNNING = false;
-}
-
-//Handles the game logic
-void doLogicLoop() {
-
-}
-
-//Redraws the game
-void doDrawLoop() {
-	window.clear();
-	window.draw(imgGalaxyBackground);
-	window.draw(imgMouseCursor);
-	window.display();
-}
-
-void updateMousePosition() {
-	imgMouseCursor.setPosition(sf::Mouse::getPosition(window));
 }
 

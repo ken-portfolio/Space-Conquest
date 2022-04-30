@@ -145,9 +145,15 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIEvents.h" />
+    <ClInclude Include="CustomGraphics.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Graphic2D.h" />
+    <ClInclude Include="Initialize.h" />
     <ClInclude Include="Primitives.h" />
+    <ClInclude Include="ProcessingEvents.h" />
+    <ClInclude Include="UserEvents.h" />
+    <ClInclude Include="WindowDrawing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
