@@ -20,11 +20,10 @@
 #include "WindowDrawing.h"
 
 
-
 int main() {
 
-	initialize(); //one time execution at program launch
-	initializeReset(); //executes each time a new game is created/loaded
+	initialize();
+	initializeReset();
 
 	while (window.isOpen() && GAME_IS_RUNNING) {
 
@@ -34,8 +33,8 @@ int main() {
 			processUserEvents(event);
 		}
 		
-		//Basic game processes handled at timer tick (resource income+, ship movement, etc.)
 		processGameEvents();
+		processAIEvents();
 
 		drawWindow();
 	}

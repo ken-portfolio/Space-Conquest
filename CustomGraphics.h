@@ -9,10 +9,12 @@
 /// used to annotate the position of a system
 /// </summary>
 void buildSolarSystemCustomGraphic() {
-	const sf::Color solarSystemColors[3] = {sf::Color(100,100,100), sf::Color::Green, sf::Color::Red};
+	const sf::Color solarSystemColors[8] = {sf::Color(100,100,100), sf::Color::Green, sf::Color::Red,
+																					sf::Color::Blue, sf::Color::Yellow, sf::Color::Cyan,
+																					sf::Color::Black, sf::Color::White };
 
-	for (int i = 0; i < 3; i++) {
-		std::cout << solarSystemColors[i].r << std::endl;
+	for (int i = 0; i < 8; i++) {
+		
 	}
 }
 
